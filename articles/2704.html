@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Warpdrv - 我的開源 Llama.cpp 啟動器，在 Strix Halo + RTX Pro 上日常跑 Qwen 35b + 27b　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Warpdrv - 我的開源 Llama.cpp 啟動器，在 Strix Halo + RTX Pro 上日常跑 Qwen 35b + 27b</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶 xornullvoid 開源了一款名為 Warpdrv 的 Llama.cpp 圖形化啟動器，專為在本地硬體上同時運行多個大型語言模型而設計。作者的硬體配置包括搭載 128GB 統一記憶體的 FEVM FAEX1（Strix Halo 平台）以及透過 OCuLink 連接的 RTX Pro 5000 Blackwell（48GB），可同時以 ROCm 跑 Qwen3.6 35b，並以 CUDA 跑 Qwen3.6 27b，主要用於 opencode 輔助開發。Warpdrv 的核心功能包含：管理多個 llama-server 實例、支援 MCP.json 與工具呼叫、內建 Model Router（可整合 claude-code 本地端）、以及實驗性的 KV-cache checkpointing。此工具不內建 llama.cpp 編譯檔，但提供一鍵 build 腳本（Recipes）。文中也詳細記錄了在 Ubuntu 25.10 上讓 Strix Halo iGPU 支援 ROCm 7.2 的完整步驟，包含核心升級至 6.18、GRUB 參數調整與 GTT 記憶體設定，對有意在 AMD APU 上跑本地 LLM 的使用者極具參考價值。目前為 Alpha 階段，開放 GitHub 回報問題與功能建議。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

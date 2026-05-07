@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Qwen 3.6-35B-A3B KV Cache 深度測試（第二篇）：困惑度、KL 散度、非對稱 K/V 與 64K 資料點　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Qwen 3.6-35B-A3B KV Cache 深度測試（第二篇）：困惑度、KL 散度、非對稱 K/V 與 64K 資料點</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sz9v9z/qwen_3635ba3b_kv_cache_part_2_ppl_kl_divergence/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>這是 Reddit 用戶針對 Qwen 3.6-35B-A3B（Q8 量化）在 M5 Max 上進行 KV cache 量化測試的後續報告，使用 TheTom TurboQuant fork 分支。本篇新增了三個面向的數據：
+
+**品質測試（困惑度與 KL 散度）**：在 4096 context 下，q8_0 KV cache 的困惑度（PPL）與 f16 基準幾乎相同（差距 -0.0005，在誤差範圍內），Top-1 token 一致率高達 98.6%，品質損失可忽略不計。turbo3 約損失 1% PPL 與 5 個百分點的 token 一致率，壓縮率越高品質損失越大，符合預期。
+
+**非對稱 K/V 組合**：`-ctk q8_0 -ctv turbo4` 是最佳選擇——在 256K 深度下吞吐量與對稱 q8_0 相當，且能處理 512K context（對稱 q8_0 在此深度記憶體不足）。這驗證了「V cache 比 K cache 更耐壓縮」的假設。反之，`-ctk f16 -ctv turbo4` 在 Metal 後端因缺乏 FlashAttention 快速路徑，速度慘跌 34～78 倍，不建議使用。
+
+**64K 資料點**：在 64K context 下，各量化方案的 prefill 速度已趨於收斂，turbo3（470 tok/s）與 q8_0（479 tok/s）僅差 2%，帶寬瓶頸比原先預估更早出現（介於 64K 與 128K 之間）。作者更新了 cache 類型推薦清單，並開放社群提交非 M5 Max Apple Silicon 的測試數據。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sz9v9z/qwen_3635ba3b_kv_cache_part_2_ppl_kl_divergence/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

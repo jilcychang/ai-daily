@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Qwen 推出 FlashQLA 高效線性注意力核心　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Qwen 推出 FlashQLA 高效線性注意力核心</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1syx4sg/qwen_introduced_flashqla/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Qwen 團隊發布了 FlashQLA，這是一套基於 TileLang 建構的高效能線性注意力（linear attention）運算核心（kernel），專為在個人裝置上執行代理式 AI（agentic AI）而設計。
+
+FlashQLA 的核心亮點包括：前向推理加速 2–3 倍、反向傳播加速 2 倍。技術上採用了三項關鍵設計：閘控驅動的自動卡內 CP（intra-card Context Parallelism）、硬體友善的代數重組，以及 TileLang 融合的 warp 專用核心。
+
+與傳統做法不同，FlashQLA 刻意將 GDN 流程拆成兩個核心分別最佳化，而非融合為單一核心。這樣雖然在大批次（large batch size）下會帶來額外記憶體 I/O 開銷，但在邊緣裝置（edge device）和長上下文（long-context）場景中能達到更好的實際效能。
+
+反向傳播部分難度最高——團隊在極度受限的晶片記憶體條件下，設計出 16 階段 warp 專用 pipeline，最終達成 2 倍以上的核心級加速。
+
+這項成果對於 TP（Tensor Parallelism）環境、小型模型以及長上下文工作負載的效能提升尤為顯著，具有實際部署價值。程式碼已開源於 GitHub。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1syx4sg/qwen_introduced_flashqla/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

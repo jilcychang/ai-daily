@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>更好的硬體，讓 AI 模型裡的「零」成為節能英雄　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>更好的硬體，讓 AI 模型裡的「零」成為節能英雄</h1>
+  <p class="meta">
+    來源：IEEE Spectrum — AI
+    · <span class="region">US/en</span>
+    · <a href="https://spectrum.ieee.org/sparse-ai" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>隨著 AI 模型規模持續擴大（Meta 最新 Llama 擁有 2 兆個參數），能源消耗與運算成本也急遽攀升。Stanford 大學研究團隊提出一條新路徑：善用大型模型中普遍存在的「稀疏性」（sparsity）——也就是模型內大多數參數（權重與激活值）本身就是零或接近零。若能跳過這些零值的無效運算，並壓縮儲存空間，理論上可大幅降低計算量與能耗。然而，目前主流硬體（多核 CPU 與 GPU）並未針對稀疏運算最佳化：GPU 雖支援「結構化稀疏」，但無法有效處理任意位置為零的「非結構化稀疏」；CPU 則因間接記憶體查詢的瓶頸而效率受限。Cerebras 的 Wafer Scale Engine 與 Meta 的 MTIA 雖有部分嘗試，但支援範圍仍不完整。Stanford 團隊為此開發出名為 Onyx 的硬體加速器，基於粗粒度可重配置陣列（CGRA）架構，是目前已知首款同時支援稀疏與稠密運算的可程式化加速器。實測結果顯示，Onyx 平均能耗僅為 CPU 的 1/70，運算速度則快約 8 倍，為兼顧高效能與低碳足跡的大型 AI 模型開發提供了新方向。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>IEEE Spectrum — AI</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://spectrum.ieee.org/sparse-ai" target="_blank" rel="noopener" class="cta">前往 IEEE Spectrum — AI 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>all_rights_reserved</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

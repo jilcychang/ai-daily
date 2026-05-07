@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Qwen3.6-27B vs Coder-Next 實測比較　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Qwen3.6-27B vs Coder-Next 實測比較</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t2ab5y/qwen3627b_vs_codernext/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶 Signal_Ad657 花費約 20 小時，用兩張 RTX PRO 6000 Blackwell 顯卡對 Qwen3.6-27B 與 Coder-Next 進行密集的並排測試，試圖找出哪個模型更優秀。結論是「視情況而定」。
+
+在統計上，兩款模型整體表現相當接近：Coder-Next 在 40 次測試中完成 25 次，27B-thinking 完成 30 次，Wilson 信賴區間重疊，屬於統計上的平手。架構上，27B 是較新一代的密集模型且擅長推理；Coder-Next 參數量約為前者 3 倍，但每次僅啟動 3B 參數（MoE 架構），兩者各有擅場。
+
+最值得注意的發現是：關閉思考模式（`--no-think`）的 27B，反而是最穩定的「完工者」，完成率高達 95.8%，且實質輸出品質與開啟思考模式時相差無幾，差別只在推理過程的文字量。
+
+單項最懸殊結果：在即時市場研究任務中，Coder-Next 0/10、27B 則 8/10；反過來，Coder-Next 在有明確邊界的商業備忘錄與文件摘要任務上 10/10 完成，且成本僅為 27B 的 1/60 至 1/100。測試資料已公開於 GitHub（Light-Heart-Labs/MMBT-Messy-Model-Bench-Tests）。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t2ab5y/qwen3627b_vs_codernext/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

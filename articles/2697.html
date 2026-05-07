@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>在 Windows 上用原生 vLLM 讓 Qwen3.6-27B 跑出每秒 72 tokens（不需 WSL 或 Docker），附便攜啟動器與安裝程式　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>在 Windows 上用原生 vLLM 讓 Qwen3.6-27B 跑出每秒 72 tokens（不需 WSL 或 Docker），附便攜啟動器與安裝程式</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶 /u/One_Slip1455 分享了一個開源專案，讓 Windows 用戶無需 WSL 或 Docker，即可原生運行 Qwen3.6-27B 模型。在 RTX 3090 上實測速度達短提示 72 tok/s、長提示（約 25k tokens）64.5 tok/s、單 GPU 127k 上下文 53.4 tok/s，雙 RTX 3090 可支援 160k 上下文。
+
+安裝極為簡便：下載 ZIP 解壓後直接雙擊 `start.bat`，無需管理員權限、pip 或 Python 環境，首次執行會自動安裝依賴並可選擇從 HuggingFace 下載 Lorbus AutoRound INT4 量化模型，啟動後提供 OpenAI 相容的 API 端點。
+
+作者為此專案建立了修補版 vLLM fork，解決了原生 Windows 上的若干相容性問題。支援 Ampere 與 Ada 架構（如 RTX 3090、4090、A6000），不支援 Pascal、Turing、Arc 或 AMD 顯示卡。RTX 50 系列（Blackwell）目前尚不支援，作者表示待 rebase 後會推出相應版本。對於想在 Windows 本地跑大模型但不想折騰虛擬化環境的用戶，這是目前最低門檻的解決方案之一。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

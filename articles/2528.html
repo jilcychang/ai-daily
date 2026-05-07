@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Qwen3.6-27B 4.256bpw 在 5070 Ti 上以全 VRAM 跑 50000 token 上下文　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Qwen3.6-27B 4.256bpw 在 5070 Ti 上以全 VRAM 跑 50000 token 上下文</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1szk0lb/qwen3627b_4256bpw_in_full_vram_on_a_5070_ti_with/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位 Reddit 用戶分享了在搭載 16GB VRAM 的 NVIDIA RTX 5070 Ti 顯卡上，以全 VRAM 模式執行 Qwen3.6-27B 量化模型的實測結果。他使用 4.256 BPW（每權重位元數）的 GGUF 量化版本，成功在不溢出至系統 RAM 的情況下，達到 50000 token 的上下文視窗，相較於另一款量化版本僅能達到的 30000 token，提升幅度相當可觀。根據 Hugging Face 模型卡的資料，此量化版本僅需約 13.3GB VRAM，是同系列中最省 VRAM 的選項，且平均困惑度（perplexity）為 6.99，與其他量化版本的 6.95–7.02 幾乎相當。雖然在機率失真指標上略高（RMS Δp 約 6.7% vs 4.3%），但屬於 4-bit 激進壓縮的正常範圍。作者也提問，是否值得改用 Qwen3.6-35B-A3B Q6_K（MoE 架構），因為 MoE 模型在 RAM 溢出時對性能影響較小，可支援更大上下文。此外，針對 24GB 顯卡用戶，另有 5.076 BPW 版本可供選擇。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1szk0lb/qwen3627b_4256bpw_in_full_vram_on_a_5070_ti_with/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>
