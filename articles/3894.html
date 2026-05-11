@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>開源工具 Cull：圖片抓取、分類與標題生成的 AI 資料集流水線　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>開源工具 Cull：圖片抓取、分類與標題生成的 AI 資料集流水線</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9jub0/sharing_cull_my_opensource_dataset_tool_for_image/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位開發者開源了名為 Cull 的工具，專為 AI 圖片資料集的機器策展設計，主要解決訓練 LoRA 或建立參考圖庫時繁瑣的人工整理問題。
+
+Cull 支援從 Civitai、X/Twitter、Reddit、Discord、Pixiv、DeviantArt、ArtStation 等超過 340 個平台抓取圖片，並整合 vision-language model 對每張圖片進行分類，支援本地 LM Studio 或雲端 Groq，輸出嚴格的 17 欄位 JSON schema，避免自由文字輸出。圖片會依品質與主題相關性評分篩選，並附上 SD prompt 的 .txt 檔與審計紀錄 .vision.json。
+
+實際用途包含：準備 LoRA 訓練集（300 張）與 fine-tune 資料集（10 萬張），以及為無 prompt 的舊圖庫自動補上標題與分類標籤。操作介面採用 Flask + Alpine.js 儀表板，支援 ZIP 匯出直接丟入訓練器。
+
+技術堆疊為 Python 3.10+、Playwright、gallery-dl，不需 Redis、資料庫或 Docker，MIT 授權。作者還內建了 Claude Code skill bundle 與三個子代理，讓 AI 輔助開發工具能直接理解 Cull 的核心架構。後續路線圖規劃新增更多 vision backend、CLI 模式與影片抓取功能。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9jub0/sharing_cull_my_opensource_dataset_tool_for_image/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

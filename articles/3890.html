@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DeepSeek-V4-Flash W4A16+FP8 搭配 MTP 自推測：在 2× RTX PRO 6000 Max-Q 上達成 524k 上下文 85 tok/s　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>DeepSeek-V4-Flash W4A16+FP8 搭配 MTP 自推測：在 2× RTX PRO 6000 Max-Q 上達成 524k 上下文 85 tok/s</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9em98/deepseekv4flash_w4a16fp8_with_mtp_selfspeculation/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶 LordNeel 在 r/LocalLLaMA 分享了針對 DeepSeek-V4-Flash 的量化與推論優化成果。原本 pasta-paul 的 W4A16-FP8 量化版本在載入時會靜默丟棄 MTP（Multi-Token Prediction）head，導致自推測加速功能完全失效。LordNeel 手動補回 MTP 模組、對路由專家執行 GPTQ 量化以符合 W4A16 INT4 格式，並修補了 vLLM。最終結果：在 2× RTX PRO 6000 Blackwell Max-Q（各 96 GB，無 NVLink）上，解碼速度從原本的 52.85 tok/s 提升至 524k 上下文雙串流 85.52 tok/s（+62%），128k 單串流更達約 111 tok/s（+110%）。整體模型參數 671B，啟用參數 32B，恰好能放入兩張卡。使用時有幾個注意事項：Max-Q 卡必須加上 `--disable-custom-all-reduce`，否則因 PCIe 拓撲問題會造成死鎖；透過調整 NCCL 環境變數可將首字延遲從 155ms 降至 91ms；`num_speculative_tokens` 最多只能設為 1，因為 DSV4-Flash 只有一個 MTP head。作者也提供了 AGENTS.md 部署手冊，可供 Claude、Codex、Cursor 等 AI 助理自動完成環境設定。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9em98/deepseekv4flash_w4a16fp8_with_mtp_selfspeculation/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

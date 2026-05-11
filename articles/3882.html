@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>用 8GB 顯存 + 32GB RAM 跑 Qwen3.6 35B A3B，實現約 190k 上下文　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>用 8GB 顯存 + 32GB RAM 跑 Qwen3.6 35B A3B，實現約 190k 上下文</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9eo83/running_qwen36_35b_a3b_on_8gb_vram_and_32gb_ram/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位 Reddit r/LocalLLaMA 用戶分享了他在筆電上本地運行 Qwen3.6 35B A3B 的完整配置，硬體為 RTX 4060（8GB VRAM）搭配 32GB DDR5 5600MHz RAM，透過 Tailscale 將筆電當作伺服器使用。他採用 Q5 量化模型，上下文長度可達約 190k token，推理速度落在 37～51 tok/sec 之間。關鍵參數包括 `--ctx-size 192640`、`--n-gpu-layers 430`、`--n-cpu-moe 35`，並搭配 llama.cpp 的 TurboQuant 分支，使用 turbo4 KV cache 格式大幅提升高上下文效能。他測試了兩個模型：`mudler/Qwen3.6-35B-A3B-APEX-GGUF` 與 `hesamation/Qwen3.6-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-GGUF`，後者是以 Claude Opus 蒸餾的推理版本。幾點重要心得：Q5 在長上下文推理上明顯優於 Q4；`--no-mmap` 搭配 `--mlock` 可減少不穩定的速度降幅；Linux 效能遠優於 Windows；RAM 頻寬（DDR5）是吞吐量的瓶頸關鍵。此配置對於想在消費級硬體上實現大上下文本地推理的使用者具有很高的參考價值。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9eo83/running_qwen36_35b_a3b_on_8gb_vram_and_32gb_ram/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

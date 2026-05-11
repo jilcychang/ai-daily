@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>我打造了一款開源超參數搜尋工具，專為 Diffusion 微調設計，可依評分自動選出最佳配置　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>我打造了一款開源超參數搜尋工具，專為 Diffusion 微調設計，可依評分自動選出最佳配置</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9k8gy/i_built_an_open_source_hyperparameter_search_tool/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶 Compunerd3 開源了一款名為 Bracket 的超參數自動搜尋工具，專門解決 diffusion 模型微調時反覆手動調參的痛點。使用者只需指定資料集與模型、設定搜尋預算，Bracket 便會以 Optuna TPE 演算法並行跑多組短時間訓練試驗，並從兩個面向自動評分：訓練 loss 曲線走勢，以及透過本地 VLM（LM Studio）對生成樣本進行提示詞符合度、視覺品質與無瑕疵度的評估。最終輸出一份 Markdown 報告，以 Welch&#39;s t-test 統計信心度標示哪組配置勝出，讓「我覺得這個 LoRA 比較好」的主觀判斷變成可量化的數字。Bracket 底層不自行實作訓練，而是呼叫 musubi-tuner 與 sd-scripts 作為子程序，支援 SDXL、Flux.1、Flux.1-Kontext、Wan 2.1/2.2、HunyuanVideo 等主流模型。工具具備 VRAM 感知的搜尋空間限制，避免 OOM 試驗浪費時間；同時內建 warm-start 已知優良配置，讓前 30 分鐘就能產出有意義的比較結果。專案採 MIT 授權、完全本地運行、無遙測、無需帳號。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9k8gy/i_built_an_open_source_hyperparameter_search_tool/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

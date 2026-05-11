@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>MTP 推理加速實測：任務類型才是關鍵——寫程式大幅提速，創意寫作反而變慢　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>MTP 推理加速實測：任務類型才是關鍵——寫程式大幅提速，創意寫作反而變慢</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9gcar/mtp_benchmark_results_the_nature_of_the/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位研究者對 Qwen3.6-27B 模型進行了超過 300 項測試，系統性地分析 MTP（Multi-Token Prediction）投機推理在不同條件下的實際效能。結論出乎意料清晰：任務類型的影響遠遠超過量化方式、溫度參數或 MTP 層量化等因素。
+
+核心發現是 draft token 的接受率：程式碼任務高達 79–89%，事實性問答為 62–70%，分析類為 48–56%，創意寫作最低僅 39–48%。接受率差距 40 個百分點，且無論怎麼調整溫度或量化設定，數字幾乎不變。
+
+以 Q4_K_M 量化為例，MTP 在程式碼任務提速 31%，但創意寫作卻慢了 9%。而記憶體頻寬吃緊的 F16 模型受益最大，程式碼任務提速高達 171%，因為每省下一次完整模型載入都意義重大。
+
+最佳 draft token 數量為 3，再多接受率下降的損失就蓋過收益；F16 是例外，N=4 表現更好。開啟 thinking 模式會讓 Q8_0 的接受率從 87% 降至 73%，但仍有 94% 提速。
+
+實測環境為 Apple Silicon M2 Max 96GB，使用 llama.cpp 手動編譯版。結論是：MTP 值不值得開，先看你在做什麼任務，再看模型大小。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1t9gcar/mtp_benchmark_results_the_nature_of_the/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

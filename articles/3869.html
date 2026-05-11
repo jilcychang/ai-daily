@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Show HN: adamsreview – 專為 Claude Code 打造的進階多代理 PR 審查工具　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Show HN: adamsreview – 專為 Claude Code 打造的進階多代理 PR 審查工具</h1>
+  <p class="meta">
+    來源：Hacker News — Front Page (AI filter)
+    · <span class="region">US/en</span>
+    · <a href="https://github.com/adamjgmiller/adamsreview" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>開發者 Adam Miller 發布了 adamsreview，一款 Claude Code 插件，透過平行子代理（sub-agents）、多階段驗證、持久化 JSON 狀態儲存，以及可選的 Codex CLI 整合，提供比內建工具更深入的 PR 程式碼審查。
+
+作者表示，在自己的 PR 上測試，adamsreview 捕捉到的真實 bug 明顯多於 Claude 內建的 /review、/ultrareview、CodeRabbit、Greptile 與 Codex 內建審查，同時誤報率更低。
+
+插件包含六個 slash 指令：review、codex-review、add、promote、walkthrough 與 fix。其中 walkthrough 指令利用 Claude 的 AskUserQuestion 功能，逐一引導使用者審視不確定的發現；fix 指令則會派發獨立代理針對每組問題進行修復，再用 Opus 模型重新審查，若有回退（regression）則自動還原，確保只提交通過驗證的修改。
+
+與 /ultrareview 不同，adamsreview 運行在一般的 Claude Code 訂閱方案下（建議使用 Max plan），不會額外消耗 Extra Usage 額度，對重度使用者更具成本優勢。目前專案已開源，作者正在徵求 Claude Code 用戶與開發者的回饋。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Hacker News — Front Page (AI filter)</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://github.com/adamjgmiller/adamsreview" target="_blank" rel="noopener" class="cta">前往 Hacker News — Front Page (AI filter) 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>
