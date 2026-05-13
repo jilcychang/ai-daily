@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Show HN：Needle — 我們將 Gemini 的工具呼叫能力蒸餾進一個 26M 參數模型　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Show HN：Needle — 我們將 Gemini 的工具呼叫能力蒸餾進一個 26M 參數模型</h1>
+  <p class="meta">
+    來源：Hacker News — Front Page (AI filter)
+    · <span class="region">US/en</span>
+    · <a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Cactus 團隊開源了 Needle，一個僅 2600 萬參數的函數呼叫（tool calling）專用模型，可在消費級裝置（手機、智慧手錶、眼鏡）上以每秒 6000 tokens 的速度進行 prefill、1200 tokens/s 的速度進行 decode。
+
+團隊的核心觀察是：代理（agentic）體驗的基礎是工具呼叫，而工具呼叫本質上是「檢索與組裝」（比對查詢與工具名稱、提取參數、輸出 JSON），並非需要複雜推理。因此，傳統 Transformer 中的 FFN 層在此場景是浪費，cross-attention 才是正確的基本元件。Needle 採用「Simple Attention Network」架構，整個模型只有 attention 與 gating，完全不含 MLP 層。
+
+訓練方面，模型先在 2000 億 tokens 上預訓練（使用 16 個 TPU v6e，耗時 27 小時），再以 Gemini 合成的 20 億 tokens 函數呼叫資料進行後訓練（僅需 45 分鐘）。儘管規模遠小，Needle 在單次函數呼叫任務上仍勝過 FunctionGemma-270M、Qwen-0.6B、Granite-350M 等更大的模型。
+
+此外，團隊發現「去除 FFN」的效益可推廣至任何能存取外部結構化知識的任務（如 RAG），因為模型不需在 FFN 權重中記憶事實。所有程式碼與模型權重皆以 MIT 授權開源。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Hacker News — Front Page (AI filter)</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener" class="cta">前往 Hacker News — Front Page (AI filter) 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

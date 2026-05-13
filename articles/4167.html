@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Statewright：用視覺化狀態機讓 AI Agent 更可靠　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Statewright：用視覺化狀態機讓 AI Agent 更可靠</h1>
+  <p class="meta">
+    來源：Hacker News — Front Page (AI filter)
+    · <span class="region">US/en</span>
+    · <a href="https://github.com/statewright/statewright" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>前 NVIDIA、AMD 資深工程師 Ben Cochran 開發了 Statewright，一套以正式狀態機（state machine）約束 AI agent 行為的框架，旨在解決當前 agentic 系統脆弱易錯的問題。
+
+他的核心洞察是：與其用更大的模型或更長的 prompt 來暴力解決可靠性問題，不如縮小問題的解法空間。他以 13–20B 參數的小模型測試 SWE-bench 問題，透過狀態機限制每個階段可用的工具與操作範圍——例如規劃階段只能讀取，實作階段才能編輯，測試階段只能執行測試指令。這些規則由程式碼強制執行，而非靠 prompt 提示。
+
+實驗結果顯示，此方法在 qwen-coder、gpt-oss、gemma4 等多個模型家族上均有一致改善，甚至讓 Claude Haiku、Sonnet 表現超出預期，Opus 也能以更少 token 更穩定地完成任務。關鍵發現是：在每個步驟精準限縮上下文，遠比給模型龐大的全局上下文更有效。
+
+Statewright 的核心是以 Rust 撰寫的狀態機引擎，並透過 MCP plugin 整合 Claude Code（未來將支援 Codex、Cursor）。使用者可透過視覺化圖形編輯器設計工作流程，清楚看到失敗路徑與重試邏輯。目前已上線並提供免費方案。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Hacker News — Front Page (AI filter)</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://github.com/statewright/statewright" target="_blank" rel="noopener" class="cta">前往 Hacker News — Front Page (AI filter) 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>
