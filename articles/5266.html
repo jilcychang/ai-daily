@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>RTX 5080 16GB 實測：Qwen3.6 35B MoE 在 128k 脈絡下達 56 tok/s，以及為何 MTP 沒有幫助　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>RTX 5080 16GB 實測：Qwen3.6 35B MoE 在 128k 脈絡下達 56 tok/s，以及為何 MTP 沒有幫助</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tiixql/rtx_5080_16gb_qwen36_35b_moe_at_128k_context_56/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>Reddit 用戶針對 NVIDIA RTX 5080 16GB 顯卡，以真實 coding agent 使用情境（最長 128k 脈絡）對 Qwen3.6 35B MoE 模型進行全面實測，重點在驗證剛合併進 llama.cpp 主線的 MTP（Multi-Token Prediction）功能是否真的有效。
+
+核心結論令人意外：**在 128k 脈絡下，開不開 MTP 速度一樣**，兩者都收斂在 56 tok/s 的生成速度。原因是 KV cache 在長脈絡下已佔滿 VRAM，MTP 的推測加速被其計算開銷完全抵消。MTP 只在模型能完整放入 GPU 時才有益——以 27B IQ3_XXS（12.45 GB）為例，MTP 讓速度從 56 tok/s 提升至 73 tok/s；但對 35B Q4_K_XL（需部分 offload 至 CPU），MTP 反而慢了 23%。
+
+推薦設定為：35B Q4_K_XL，關閉 MTP，`--fit-target 1536`，支援最大 131k 脈絡，prompt processing 達 1,584 tok/s（吃完 128k token 約需 81 秒），GSM8K 準確率 91%。35B MoE 能輕鬆撐起 131k 是因為其混合架構（Gated DeltaNet + Attention）只有約 10 層全 Attention 需要 KV cache，其餘 SSM 層僅用極小的遞迴狀態，和 27B 全密集模型（上限 56k）相比優勢明顯。
+
+實測數據均已開源，作者也坦承部分文字有使用 AI 協助生成。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tiixql/rtx_5080_16gb_qwen36_35b_moe_at_128k_context_56/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

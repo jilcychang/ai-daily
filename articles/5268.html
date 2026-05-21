@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>在 NVIDIA DGX Spark 上跑 Qwen3.6-35B-A3B-FP8 搭配 Hermes Agent 的設定心得與改善建議　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>在 NVIDIA DGX Spark 上跑 Qwen3.6-35B-A3B-FP8 搭配 Hermes Agent 的設定心得與改善建議</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tj3fvf/opinionsimprovements_for_my_qwen3635ba3bfp8/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位 Reddit 用戶分享了他在單台 NVIDIA DGX Spark 上部署 Qwen/Qwen3.6-35B-A3B-FP8 模型搭配 Hermes Agent 框架的完整設定，並向社群徵求意見。他使用 vLLM 的 OpenAI 相容介面，透過 Docker 容器化部署，主要設定包括：FlashInfer 作為 Attention 後端、FP8 精度的 KV Cache、最大 262,144 tokens 的超長上下文視窗，以及啟用前綴快取（Prefix Caching）與分塊預填充（Chunked Prefill）來優化長上下文效能。此外，他還啟用了 Qwen3 Next MTP 推測解碼（Speculative Decoding），每次推測 2 個 token 以提升推理速度，並保留模型的思考鏈（Thinking Chain）輸出。溫度設為 0.6、top_p 為 0.95，整體偏向較保守的生成策略。該設定目前運行穩定，但用戶希望從有類似長上下文或 Agentic 工作流部署經驗的人那裡獲得優化建議，例如記憶體使用率、並發序列數（max-num-seqs 僅設 4）等方面是否還有調整空間。這篇貼文對於想在本地端部署大型 MoE 模型並搭配 Agent 框架的開發者具有相當參考價值。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tj3fvf/opinionsimprovements_for_my_qwen3635ba3bfp8/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

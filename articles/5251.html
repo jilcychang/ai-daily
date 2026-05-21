@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Qwen3.6 27B 與 llama.cpp 使用心得分享　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>Qwen3.6 27B 與 llama.cpp 使用心得分享</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tjbi24/qwen36_27b_and_llamacpp_appreciation_post/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位 Reddit 用戶分享了在本地端運行 Qwen3.6-27B（Qwen3.6 27B）模型的實際工作體驗，搭配 llama.cpp 的 llama-server 進行部署。硬體配置為兩張 AMD RX 9070 XT 顯示卡，透過 ROCm 後端以張量並行（tensor parallelism）方式運行，各限制功耗約 235W，使用 UD-Q5_K_XL 量化版本（GGUF 格式），情境長度設為 131072 tokens。
+
+作者將此模型用於實際的後端除錯工作，任務涉及分析部署在三個不同實例上的後端服務之間的互動，並需避免網路衝突。模型展現出強大的 agentic 能力，能自動加入日誌、在本地啟動服務、發送請求、迭代測試，並對非關鍵部分進行 mock，確保重要程式碼不被動到。效能數據顯示，prompt eval 速度可達每秒 400+ tokens，生成速度約 45-50 tokens/秒，draft acceptance rate 最高達 98.9%。
+
+作者特別強調隱私優勢：在本地運行意味著敏感的私有環境資訊不會外洩給 Gemini 等雲端服務。儘管 5-bit 量化偶有瑕疵，整體速度與可操控性讓修正方向變得容易。作者期待未來入手 AMD R9700 顯卡，以支援更高量化精度與更大上下文。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tjbi24/qwen36_27b_and_llamacpp_appreciation_post/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AMD BC-250 與低成本算力的探索：解鎖 PS5 APU 的隱藏運算單元　·　AI 日報</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">AI 日報</a>
+    <nav>
+      <a href="../">最新</a>
+      <a href="../archive.html">歷史</a>
+    </nav>
+  </header>
+  <main>
+<article class="article-full">
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+
+  <h1>AMD BC-250 與低成本算力的探索：解鎖 PS5 APU 的隱藏運算單元</h1>
+  <p class="meta">
+    來源：Reddit r/LocalLLaMA
+    · <span class="region">US/en</span>
+    · <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tj4unp/amd_bc250_and_the_search_for_cheap_compute/" target="_blank" rel="noopener">閱讀原文 ↗</a>
+  </p>
+
+  <div class="summary-box">
+    <h2>摘要</h2>
+    <p>一位開發者在 AMD MI50 漲價後，轉而尋找被忽視的低成本算力方案，發現了由 PS5 APU 改裝而成的獨立板卡——AMD BC-250。這款板卡採用 Zen 2 架構，配備 16 GB 統一 GDDR6 記憶體與 RDNA 2（gfx1013）GPU，eBay 上售價僅 $50–150 美元，但出廠時只啟用 40 個 CU（運算單元）中的 24 個。
+
+該開發者深入研究 amdgpu 驅動原始碼後，發現兩個暫存器（CC_GC_SHADER_ARRAY_CONFIG 與 SPI_PG_ENABLE_STATIC_WGP_MASK）可在驅動初始化路徑中被覆寫，從而解鎖全部 40 個 CU。實測結果顯示，在 1500 MHz 下，解鎖後的推理速度從 230 tok/s 大幅提升至 372 tok/s，超頻至 2 GHz 更可達 466 tok/s，但功耗也從 55W 飆升至 181W。
+
+此外，他也針對 gfx1013 開發自訂 HIP kernel，目前 HIP 後端的生成速度（48 tok/s）已超越 Vulkan（30 tok/s），且 Q6_K 量化格式的 prefill 效能比 HIP 基線提升了 63%。專案已開源於 GitHub，並設有 Discord 社群供同好交流。這對想以極低成本跑本地 LLM 的使用者而言，是一個頗具潛力的選項。</p>
+  </div>
+
+  <div class="full-content no-translation">
+    <h2>完整內容</h2>
+    <p>本文為商業媒體報導，原文著作權歸 <strong>Reddit r/LocalLLaMA</strong> 所有，
+       本站不提供完整翻譯。</p>
+    <p>請至原網站閱讀全文：
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tj4unp/amd_bc250_and_the_search_for_cheap_compute/" target="_blank" rel="noopener" class="cta">前往 Reddit r/LocalLLaMA 閱讀原文 ↗</a>
+    </p>
+    <p class="license-note">
+      授權狀態：<code>mixed</code>
+    </p>
+  </div>
+
+  <p class="back">
+    <a href="../issues/2026-04-26.html">← 回到 2026-04-26 日報</a>
+  </p>
+</article>
+  </main>
+  <footer class="site-footer">
+    <p>本站由 AI 日報自動產出。文章標題與摘要為自動翻譯整理，原文著作權屬各來源所有。
+       商業媒體文章僅提供繁中摘要，全文請點擊原文連結至原網站閱讀。</p>
+    <p>© 2026 AI 日報 · 個人非營利專案 · 僅供個人研究與資訊參考</p>
+  </footer>
+</body>
+</html>
